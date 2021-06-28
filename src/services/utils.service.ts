@@ -56,9 +56,7 @@ export const useCompanyInfo = () => {
 
   const setCompanyDetails = async () => {
     try {
-      const res = await axios.get("/company-details", {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.get("/company-details");
       const { company_name, email, address, phone_number } = res.data;
       companyDetails.company_name = company_name;
       companyDetails.company_email = email;

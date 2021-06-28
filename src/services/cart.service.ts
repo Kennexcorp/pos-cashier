@@ -52,9 +52,7 @@ export const useCart = () => {
   //   get all categories from server
   const setCategories = async () => {
     try {
-      const res = await axios.get("/categories", {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.get("/categories");
       state.categories = res.data;
       unSetError();
       return res;
@@ -68,9 +66,7 @@ export const useCart = () => {
   //   get products for selected category
   const setProducts = async () => {
     try {
-      const res = await axios.get("/products", {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.get("/products");
       state.allProducts = res.data;
       unSetError();
       return res;
@@ -83,9 +79,7 @@ export const useCart = () => {
   //   get payment methods
   const setPaymentMethods = async () => {
     try {
-      const res = await axios.get("/payment-methods", {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.get("/payment-methods");
       state.paymentMethods = res.data;
       unSetError();
       return res;
@@ -98,9 +92,7 @@ export const useCart = () => {
   //   get sales
   const setSales = async (sale: number) => {
     try {
-      const res = await axios.get(`/get-sales/${sale}`, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.get(`/get-sales/${sale}`);
       state.sales = res.data.map((obj: any) => ({
         id: obj.id,
         name: obj.product.name,
@@ -122,9 +114,7 @@ export const useCart = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const postItems = async (items: any) => {
     try {
-      const res = await axios.post("/make-sales", items, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await axios.post("/make-sales", items);
       unSetError();
       return res;
     } catch (error) {
