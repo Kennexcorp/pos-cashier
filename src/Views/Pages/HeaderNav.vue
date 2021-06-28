@@ -46,10 +46,7 @@ export default defineComponent({
   setup() {
     const { logout, user, closeShift } = useAuth();
     const { confirm, popop } = useSwal();
-    const { companyDetails, setCompanyDetails } = useCompanyInfo();
-
-    // get company details
-    setCompanyDetails();
+    const { companyDetails } = useCompanyInfo();
 
     const closeAttendantShift = async () => {
       const result = await confirm();

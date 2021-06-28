@@ -3,7 +3,7 @@ FROM node:14-alpine
 # FROM node:lts-alpine
 
 # install simple http server for serving static content
-RUN npm install -g http-server
+# RUN npm install -g http-server
 
 # make the 'app' folder the current working directory
 WORKDIR /app
@@ -20,6 +20,6 @@ COPY . .
 # build app for production with minification
 RUN npm run build
 
-EXPOSE 4200
-CMD [ "http-server", "dist" ]
+EXPOSE 4300
+CMD [ "npm", "run", "serve" ]
 

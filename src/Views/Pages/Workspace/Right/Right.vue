@@ -43,7 +43,7 @@ export default defineComponent({
     const { postItems, setPaymentMethods, paymentMethods, setProducts } =
       useCart();
     const { confirm } = useSwal();
-    const { companyDetails, setCompanyDetails } = useCompanyInfo();
+    const { companyDetails } = useCompanyInfo();
 
     const { salesId, name } = user;
 
@@ -57,8 +57,6 @@ export default defineComponent({
       }))
     );
 
-    // get details
-    setCompanyDetails();
     // set payment methods
     setPaymentMethods();
 

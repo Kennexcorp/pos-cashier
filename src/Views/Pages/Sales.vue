@@ -98,9 +98,7 @@ export default defineComponent({
     const { error, hasError, sales, setSales } = useCart();
     const { user } = useAuth();
     const { print, formatForPrinting } = usePrint();
-    const { companyDetails, setCompanyDetails } = useCompanyInfo();
-
-    setCompanyDetails();
+    const { companyDetails } = useCompanyInfo();
 
     const filteredSales = computed(() => {
       return sales.value.filter(

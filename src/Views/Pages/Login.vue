@@ -47,14 +47,11 @@ import { useCompanyInfo, useSwal } from "@/services/utils.service";
 
 export default defineComponent({
   setup() {
-    const { setCompanyDetails, companyDetails } = useCompanyInfo();
+    const { companyDetails } = useCompanyInfo();
     const { popop } = useSwal()
     const { login } = useAuth();
     const loading = ref(false);
     const error = ref(false);
-
-    // get company details
-    setCompanyDetails();
 
     const user = reactive({
       email: "",

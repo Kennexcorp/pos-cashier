@@ -42,14 +42,15 @@ export const useSwal = () => {
   return { confirm, popop };
 };
 
+const companyDetails = reactive({
+  company_name: "",
+  company_email: "",
+  company_address: "",
+  company_phone: 0,
+});
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const useCompanyInfo = () => {
-  const companyDetails = reactive({
-    company_name: "",
-    company_email: "",
-    company_address: "",
-    company_phone: 0,
-  });
 
   const { setError, unSetError } = useError();
 
