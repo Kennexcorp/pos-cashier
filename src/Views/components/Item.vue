@@ -48,10 +48,7 @@ export default defineComponent({
   setup(props) {
     const { formatCurrency } = useCurrency();
     const localItem = reactive(props.item);
-    const format = (val: number) => {
-      localItem.quantity = val >= 1 ? val : localItem.quantity;
-    };
-    return { localItem, formatCurrency, format };
+    return { localItem, formatCurrency };
   },
 });
 </script>
