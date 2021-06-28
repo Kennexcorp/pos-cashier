@@ -51,7 +51,6 @@ const companyDetails = reactive({
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const useCompanyInfo = () => {
-
   const { setError, unSetError } = useError();
 
   const setCompanyDetails = async () => {
