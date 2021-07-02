@@ -61,6 +61,7 @@ export default function useAuth() {
       router.push({ name: "Login" });
       return res;
     } catch (error) {
+      removeItems();
       setError("Oops!! Error performing operation");
       return error;
     }
